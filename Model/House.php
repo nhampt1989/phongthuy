@@ -75,7 +75,7 @@ function tinhchat2cung($cung1, $cung2)
             default:
                 return "Lỗi cung1 = Càn ";
         }
-    }else if ($cung1 == "Khảm") {
+    } else if ($cung1 == "Khảm") {
         switch ($cung2) {
             case "Càn":
                 return "Lục sát";
@@ -101,7 +101,7 @@ function tinhchat2cung($cung1, $cung2)
             default:
                 return "Lỗi cung1 = Khảm ";
         }
-    }else if ($cung1 == "Cấn") {
+    } else if ($cung1 == "Cấn") {
         switch ($cung2) {
             case "Khảm":
                 return "Ngũ Quỷ";
@@ -127,7 +127,7 @@ function tinhchat2cung($cung1, $cung2)
             default:
                 return "Lỗi cung1 = Cấn ";
         }
-    }else if ($cung1 == "Chấn") {
+    } else if ($cung1 == "Chấn") {
         switch ($cung2) {
             case "Khảm":
                 return "Thiên y";
@@ -153,7 +153,7 @@ function tinhchat2cung($cung1, $cung2)
             default:
                 return "Lỗi cung1 = Chấn ";
         }
-    }else if ($cung1 == "Tốn") {
+    } else if ($cung1 == "Tốn") {
         switch ($cung2) {
             case "Khảm":
                 return "Sinh khí";
@@ -179,7 +179,7 @@ function tinhchat2cung($cung1, $cung2)
             default:
                 return "Lỗi cung1 = Tốn ";
         }
-    }else if ($cung1 == "Ly") {
+    } else if ($cung1 == "Ly") {
         switch ($cung2) {
             case "Khảm":
                 return "Diên niên";
@@ -205,7 +205,7 @@ function tinhchat2cung($cung1, $cung2)
             default:
                 return "Lỗi cung1 = Ly ";
         }
-    }else if ($cung1 == "Khôn") {
+    } else if ($cung1 == "Khôn") {
         switch ($cung2) {
             case "Khảm":
                 return "Tuyệt mệnh";
@@ -231,7 +231,7 @@ function tinhchat2cung($cung1, $cung2)
             default:
                 return "Lỗi cung1 = Khôn ";
         }
-    }else if ($cung1 == "Đoài") {
+    } else if ($cung1 == "Đoài") {
         switch ($cung2) {
             case "Khảm":
                 return "Họa hại";
@@ -345,17 +345,48 @@ function xemthaitue_sonhuong($diachish, $sonhuong)
 
 
 //Vòng sao phúc đức
-$vongsaophucduc = array("","Phúc đức","Ôn hoàng","Tấn tài","Trường bệnh","Tố tụng","Quan tước",
-"Quan quý","Tự ải","Vượng trang","Hưng phước","Pháp trường","Điên cuồng","Khẩu thiệt","Vượng tàm",
-"Tấn điền","Khốc khấp","Cô quả","Vinh phú","Thiếu vong","Xương dâm","Thân hôn","Hoan lạc",
-"Bại tuyệt","Vượng tài");
+$vongsaophucduc = array(
+    "", "Phúc đức", "Ôn hoàng", "Tấn tài", "Trường bệnh", "Tố tụng", "Quan tước",
+    "Quan quý", "Tự ải", "Vượng trang", "Hưng phước", "Pháp trường", "Điên cuồng", "Khẩu thiệt", "Vượng tàm",
+    "Tấn điền", "Khốc khấp", "Cô quả", "Vinh phú", "Thiếu vong", "Xương dâm", "Thân hôn", "Hoan lạc",
+    "Bại tuyệt", "Vượng tài"
+);
 
+$khoi_than = array(
+    "", "Thân", "Canh", "Dậu", "Tân", "Tuất", "Càn", "Hợi", "Nhâm", "Tý", "Quý", "Sửu", "Cấn",
+    "Dần", "Giáp", "Mão", "Ất", "Thìn", "Tốn", "Tỵ", "Bính", "Ngọ", "Đinh", "Mùi", "Khôn"
+);
+$khoi_dan = array(
+    "","Dần", "Giáp", "Mão", "Ất", "Thìn", "Tốn", "Tỵ", "Bính", "Ngọ", "Đinh", "Mùi", "Khôn",
+     "Thân", "Canh", "Dậu", "Tân", "Tuất", "Càn", "Hợi", "Nhâm", "Tý", "Quý", "Sửu", "Cấn"    
+);
+$khoi_giap = array(
+    "","Giáp", "Mão", "Ất", "Thìn", "Tốn", "Tỵ", "Bính", "Ngọ", "Đinh", "Mùi", "Khôn","Thân", 
+    "Canh", "Dậu", "Tân", "Tuất", "Càn", "Hợi", "Nhâm", "Tý", "Quý", "Sửu", "Cấn","Dần"
+);
+$khoi_ty = array(
+    "", "Tỵ", "Bính", "Ngọ", "Đinh", "Mùi", "Khôn","Thân", "Canh", "Dậu", "Tân", "Tuất", "Càn",
+         "Hợi", "Nhâm", "Tý", "Quý", "Sửu", "Cấn","Dần", "Giáp", "Mão", "Ất", "Thìn", "Tốn" 
+);
+$khoi_hoi = array(
+    "", "Hợi", "Nhâm", "Tý", "Quý", "Sửu", "Cấn","Dần", "Giáp", "Mão", "Ất", "Thìn", "Tốn", 
+    "Tỵ", "Bính", "Ngọ", "Đinh", "Mùi", "Khôn","Thân", "Canh", "Dậu", "Tân", "Tuất", "Càn" 
+);
 //vị trí các sao khi biết hướng nhà
-function vitri24sao($huongnha){
-    if($huongnha== "Ly"){
-        
-
-    }else{
+function vitri24sao($huong_8huong)
+{
+    $saophucduc_khoitai = "";
+    if ($huong_8huong == "Ly" || $huong_8huong == "Càn") {
+        $saophucduc_khoitai = "Thân";
+    } else if ($huong_8huong == "Khảm") {
+        $saophucduc_khoitai = "Dần";
+    } else if ($huong_8huong == "Cấn") {
+        $saophucduc_khoitai = "Giáp";
+    } else if ($huong_8huong == "Chấn" || $huong_8huong == "Tốn") {
+        $saophucduc_khoitai = "Tỵ";
+    } else if ($huong_8huong == "Khôn" || $huong_8huong == "Đoài") {
+        $saophucduc_khoitai = "Hợi";
+    } else {
         return "Lỗi vị trí sao";
     }
 }
@@ -363,9 +394,14 @@ function vitri24sao($huongnha){
 
 
 
-class House{
+class House
+{
     private $huongnha;
     private $thaitue;
+}
 
+
+class Cung{
+    private $namsinh;
 
 }

@@ -2,8 +2,8 @@
 
 <?php
 
-include_once __DIR__ . '/../phongthuy/Model/Person.php';
-include_once __DIR__ . '/../phongthuy/Model/House.php';
+include_once __DIR__ . '/../phongthuychimi/Model/Person.php';
+include_once __DIR__ . '/../phongthuychimi/Model/House.php';
 ?>
 
 
@@ -155,7 +155,23 @@ if ($xemthaitue_24huong == "Phạm") {
 
 
 </div>
+<br>
 
+<?php
+
+$diachi_nhihop = tim_nhihop($chunha_diachi);
+$diachi_tamhop = tim_tamhop($chunha_diachi);
+
+?>
+
+<div>
+    Đặt cổng :
+    <br>
+    1. Địa chi hợp : <?php echo $diachi_nhihop;
+                        print_r($diachi_tamhop); ?>
+    2. Cung cát : 
+
+</div>
 
 <?php echo $baoloi; ?>
-<p><a href="../phongthuy/index.html">Home page</a></p>
+<p><a href="../phongthuychimi/index.html">Home page</a></p>
