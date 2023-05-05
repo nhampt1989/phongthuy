@@ -2,7 +2,8 @@
 
 <?php
 
-
+include_once __DIR__ . '/../phongthuy/Model/Person.php';
+include_once __DIR__ . '/../phongthuy/Model/House.php';
 ?>
 
 
@@ -60,9 +61,9 @@ function test_input($data)
 <?php
 $ten = "A";
 $gioitinh = "Nam";
-$namsinh = "1989";
-$dohuongnha = "175";
-$namlamnha = "2024";
+$namsinh = 1989;
+$dohuongnha = 175;
+$namlamnha = 2024;
 $baoloi = "";
 ?>
 
@@ -70,95 +71,85 @@ $baoloi = "";
 <!-- Tìm các thông số của chủ nhà -->
 
 <?php
-$thongtinchunha = array("");
-$thongtinnamlam = array("");
-$cungmenhchu = "";
-$huongnha = "";
+
+$chunha_thiencan = $chunha_diachi = $chunha_cungmenh = "";
+$huong_8huong = "";
 $tinhchatcung = "";
+$huong_24son = $son_24son = "";
+$namlam_thiencan = $namlam_diachi = $namlam_napam = "";
+$xemthaitue = "";
 
-//$thiencan = $diachi = "";
-//$dohuongnha = $huongnha = 0;
-$huong24 = "";
-$son24 = "";
+$nguoi1 = new Person();
+$nguoi1->set_name($ten);
+$nguoi1->set_namsinh($namsinh);
+$nguoi1->set_gioitinh($gioitinh);
 
-// tìm cung mệnh
-include_once __DIR__ . '/../phongthuy/Info/Person.php';
-include_once __DIR__ . '/../phongthuy/Info/House.php';
-
-$thongtinchunha[1] = cungmenh($namsinh, $gioitinh);
-$cungmenhchu = cungmenh($namsinh, $gioitinh);
-
-$thongtinchunha[2] = napam($namsinh);
-$thongtinnamlam[2] = napam($namlamnha);
-
-
-$thongtinchunha[3] = thiencan($namsinh);
-$thongtinnamlam[3] = thiencan($namlamnha);
-
-$thongtinchunha[4] = diachi($namsinh);
-$thongtinnamlam[4] = diachi($namlamnha);
-
-$huongnha = huongnha8($dohuongnha);
-$tinhchatcung = tinhchat2cung($huongnha, $cungmenhchu);
-// echo $huongnha . $cungmenhchu . $tinhchatcung;
+// Thông tin chủ nhà
+$chunha_thiencan = $nguoi1->tim_thiencan();
+$chunha_diachi = $nguoi1->tim_diachi();
+$chunha_cungmenh = $nguoi1->tim_cungmenh();
+$chunha_napam =  $nguoi1->tim_napam();
 
 
-//xem hướng nhà vào tiểu hay đại không vong
-if (19.5 < $dohuongnha && $dohuongnha < 25.5 || 64.5 < $dohuongnha && $dohuongnha < 69.5 || 109.5 < $dohuongnha && $dohuongnha < 115.5 || 154.5 < $dohuongnha && $dohuongnha < 159.5 || 199.5 < $dohuongnha && $dohuongnha < 205.5 || 244.5 < $dohuongnha && $dohuongnha < 249.5 || 289.5 < $dohuongnha && $dohuongnha < 295.5 || 334.5 < $dohuongnha && $dohuongnha < 339.5) {
-    $tinhkhongvong = "Đại không vong";
-} else if (4.5 < $dohuongnha && $dohuongnha < 10.5 || 34.5 < $dohuongnha && $dohuongnha < 40.5 || 49.5 < $dohuongnha && $dohuongnha < 55.5 || 79.5 < $dohuongnha && $dohuongnha < 85.5 || 94.5 < $dohuongnha && $dohuongnha < 100.5 || 124.5 < $dohuongnha && $dohuongnha < 130.5 || 139.5 < $dohuongnha && $dohuongnha < 145.5 || 169.5 < $dohuongnha && $dohuongnha < 175.5 || 184.5 < $dohuongnha && $dohuongnha < 190.5 || 209.5 < $dohuongnha && $dohuongnha < 215.5 || 229.5 < $dohuongnha && $dohuongnha < 235.5 || 259.5 < $dohuongnha && $dohuongnha < 265.5 || 274.5 < $dohuongnha && $dohuongnha < 280.5 || 304.5 < $dohuongnha && $dohuongnha < 310.5 || 319.5 < $dohuongnha && $dohuongnha < 325.5 || 349.5 < $dohuongnha && $dohuongnha < 355.5) {
-    $tinhkhongvong = "Tiểu không vong";
+//Thông tin năm làm nhà
+$namlam = new Person();
+$namlam->set_namsinh($namlamnha);
+$namlam_thiencan = $namlam->tim_thiencan();
+$namlam_diachi = $namlam->tim_diachi();
+$namlam_napam = $namlam->tim_napam();
+
+
+// Thông tin của nhà 
+$huong_8huong = huongnha_8huong($dohuongnha);
+$huong_24son = huongnha_24son($dohuongnha);
+$son_24son = son_24son($huong_24son);
+$tinhchatcung = tinhchat2cung($huong_8huong, $chunha_cungmenh);
+$xemthaitue_24huong = xemthaitue_sonhuong($namlam_diachi, $huong_24son);
+$xemthaitue_24son = xemthaitue_sonhuong($namlam_diachi, $son_24son);
+
+if ($xemthaitue_24huong == "Phạm") {
+    $xemthaitue = "Hướng $huong_24son Phạm";
+} else if ($xemthaitue_24son == "Phạm") {
+    $xemthaitue = "Sơn $son_24son Phạm";
 } else {
-    $tinhkhongvong = "";
+    $xemthaitue = "Không Phạm";
 }
 
-// xem sơn, hướng có phạm thái tuế không
-$huong24 = huongnha24($dohuongnha);
-$son24 = son24($huong24);
-if (xemthaitue(diachi($namlamnha), $huong24) == "Phạm") {
-    $xemthaituehuong = "Hướng $huong24 Phạm";
-} else if (xemthaitue(diachi($namlamnha), $son24) == "Phạm") {
-    $xemthaituehuong = "Sơn $son24 Phạm";
-} else {
-    $xemthaituehuong = "Không Phạm";
-}
+
+
 ?>
 
 <div>
     Tên chủ nhà : <?php echo $ten; ?>
     <br>
-    Năm sinh : <?php echo $namsinh; ?> - <?php echo $thongtinchunha[3] . $thongtinchunha[4]; ?>
+    Năm sinh : <?php echo $namsinh; ?> - <?php echo $chunha_thiencan  . " " .  $chunha_diachi  ?>
     <br>
-    Cung mệnh : <?php echo $thongtinchunha[1]; ?>
+    Cung mệnh : <?php echo $chunha_cungmenh;  ?>
     <br>
-    Niên hành: <?php echo $thongtinchunha[2]; ?>
+    Niên hành: <?php echo $chunha_napam; ?>
     <br>
-    <!-- Linh vật : <?php echo $thongtinchunha[3]; ?>
-    <br>
-    Can : <?php echo $thongtinchunha[4]; ?> -->
-    <br>
-
 </div>
+<br>
+
 <div>
-    Năm làm nhà : <?php echo $namlamnha; ?> - <?php echo $thongtinnamlam[3] . $thongtinnamlam[4]; ?>
+    Năm làm nhà : <?php echo $namlamnha; ?> - <?php echo $namlam_thiencan  . " " .  $namlam_diachi     ?>
     <br>
-    Niên hành: <?php echo $thongtinnamlam[2]; ?>
+    Niên hành: <?php echo $namlam_napam;  ?>
     <br>
 
 
 </div>
 
 <div>
-    Hướng nhà: <?php echo $dohuongnha . " - " . huongnha8($dohuongnha); ?>
+    Hướng nhà: <?php echo $dohuongnha . " - " . $huong_8huong; ?>
     <br>
-    Nhà hướng: <?php echo  huongnha24($dohuongnha); ?> được <?php echo  $tinhchatcung; ?>
+    Nhà hướng: <?php echo  $huong_24son; ?> được <?php echo  $tinhchatcung; ?>
     <br>
-    <?php echo $tinhkhongvong;  ?>
+    <?php   ?>
     <br>
-    Nhà tọa sơn : <?php echo son24(huongnha24($dohuongnha)); ?>
+    Nhà tọa sơn : <?php echo $son_24son; ?>
     <br>
-
-    Thái Tuế: <?php echo $xemthaituehuong; ?>
+    Thái Tuế: <?php echo $xemthaitue; ?>
     <br>
     Mệnh :
 

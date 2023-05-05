@@ -1,0 +1,138 @@
+.Diaban{
+    display: grid;
+   width: 1100px;
+   height: 1200px;
+   
+}
+.cungtren{
+   
+    width: 1100px;
+    height: 250px;
+    
+ }
+ .cungpai{
+   
+     width: 273px;
+     height: 503px;
+     float: left;
+     
+  }
+  .Cung{
+    width: 270px;
+    height: 250px;        
+   
+}
+.Cungti{
+    width: 270px;
+    height: 250px;        
+    border-style: solid;
+    border-width: 2px 1px 1px 2px;
+    float: left;
+   
+}
+.Cungngo{
+    width: 270px;
+    height: 250px;    
+   
+    border-style: solid;
+    border-width: 2px 1px 1px 1px;
+    float: left;
+}
+.Cungmui{
+    width: 270px;
+    height: 250px;    
+    
+    border-style: solid;
+    border-width: 2px 1px 1px 1px;  
+    float: left;
+}
+.Cungthan{
+    width: 270px;
+    height: 250px;    
+    
+    border-style: solid;
+    border-width: 2px 2px 1px 1px;  
+    float: left;
+}
+.Cungthin{
+    width: 270px;
+    height: 250px;        
+    border-style: solid;
+    border-width: 1px 1px 1px 2px;  
+    float: left;
+    
+}
+
+.Cungmao{
+    width: 270px;
+    height: 250px;        
+    border-style: solid;
+    border-width: 1px 1px 1px 2px;     
+    float: left;
+}
+.thienban{
+    
+    width: 542px;
+    height: 501px;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;  
+    float: left;
+}
+
+.cungtrai{
+   
+    width: 273px;
+    height: 503px;
+    float: left;
+    
+ }
+
+.Cungdau{
+    width: 270px;
+    height: 250px;        
+    border-style: solid;
+    border-width: 1px 2px 1px 1px;     
+    float: left;
+    
+}
+.Cungtuat{
+    width: 270px;
+    height: 250px;        
+    border-style: solid;
+    border-width: 1px 2px 1px 1px;     
+    float: left;
+    
+}
+
+.Cungdan{
+    width: 270px;
+    height: 250px;        
+    border-style: solid;
+    border-width: 1px 1px 2px 2px;
+    float: left;
+   
+}
+.Cungsuu{
+    width: 270px;
+    height: 250px;    
+   
+    border-style: solid;
+    border-width: 1px 1px 2px 1px;
+    float: left;
+}
+.Cungty{
+    width: 270px;
+    height: 250px;    
+    
+    border-style: solid;
+    border-width: 1px 1px 2px 1px;
+    float: left;
+}
+.Cunghoi{
+    width: 270px;
+    height: 250px;    
+    
+    border-style: solid;
+    border-width: 1px 2px 2px 1px;  
+    float: left;
+}

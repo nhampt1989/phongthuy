@@ -1,0 +1,68 @@
+.Diaban{
+    display: flex;
+   
+   
+}
+
+.Cungti{
+    width: 250px;
+    height: 250px;        
+    border-style: solid red;
+    border-width: 2px 1px 1px 2px;
+    float: left;
+   
+}
+.Cungngo{
+    width: 250px;
+    height: 250px;    
+   
+    border-style: solid;
+    border-width: 2px 1px 1px 1px;
+    float: left;
+}
+.Cungmui{
+    width: 250px;
+    height: 250px;    
+    
+    border-style: solid;
+    border-width: 2px 1px 1px 1px;  
+    float: left;
+}
+.Cungthan{
+    width: 250px;
+    height: 250px;    
+    
+    border-style: solid;
+    border-width: 2px 2px 1px 1px;  
+    float: left;
+}
+.Cungthin{
+    width: 250px;
+    height: 250px;    
+    
+    border-style: solid;
+    border-width: 1px 1px 1px 2px;  
+    float: left;
+    
+}
+.thienban{
+    width: 500%;
+    height: 500px;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;  
+    float: left;
+}
+.Cungdau{
+    width: 22%;
+    height: 250px;
+    border: 2px solid black;
+    float: left;
+    
+}
+.Cungmao{
+    width: 22%;
+    height: 250px;
+    border: 2px solid black;
+    
+    
+}

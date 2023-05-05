@@ -1,6 +1,6 @@
 <?php
 // Tìm Hướng nhà khi biết độ hướng nhà
-function huongnha8($dohuongnha)
+function huongnha_8huong($dohuongnha)
 {
     $huongnha8 = array("Khảm", "Cấn", "Chấn", "Tốn", "Ly", "Khôn", "Đoài", "Càn");
     if ($dohuongnha <= 360 && 0 <= $dohuongnha) {
@@ -16,7 +16,7 @@ function huongnha8($dohuongnha)
     }
 }
 
-function huongnha24($dohuongnha)
+function huongnha_24son($dohuongnha)
 {
 
     $huong24 = array("Tý", "Quý", "Sửu", "Cấn", "Dần", "Giáp", "Mão", "Ất", "Thìn", "Tốn", "Tỵ", "Bính", "Ngọ", "Đinh", "Mùi", "Khôn", "Thân", "Canh", "Dậu", "Tân", "Tuất", "Càn", "Hợi", "Nhâm");
@@ -36,7 +36,7 @@ function huongnha24($dohuongnha)
 }
 
 // Tìm sơn sau khi biết hướng
-function son24($huong)
+function son_24son($huong)
 {
 
     $huongson = array("Tý" => "Ngọ", "Quý" => "Đinh", "Sửu" => "Mùi", "Cấn" => "Khôn", "Dần" => "Thân", "Giáp" => "Canh", "Mão" => "Dậu", "Ất" => "Tân", "Thìn" => "Tuất", "Tốn" => "Càn", "Tỵ" => "Hợi", "Bính" => "Nhâm", "Ngọ" => "Tý", "Đinh" => "Quý", "Mùi" => "Sửu", "Khôn" => "Cấn", "Thân" => "Dần", "Canh" => "Giáp", "Dậu" => "Mão", "Tân" => "Ất", "Tuất" => "Thìn", "Càn" => "Tốn", "Hợi" => "Tỵ", "Nhâm" => "Bính");
@@ -264,7 +264,7 @@ function tinhchat2cung($cung1, $cung2)
 
 
 //xem hướng, sơn có phạm thái tuế không
-function xemthaitue($diachish, $sonhuong)
+function xemthaitue_sonhuong($diachish, $sonhuong)
 {
     if ($diachish == "Ngọ") {
         if ($sonhuong == "Bính" || $sonhuong == "Ngọ" || $sonhuong == "Đinh") {
@@ -358,4 +358,14 @@ function vitri24sao($huongnha){
     }else{
         return "Lỗi vị trí sao";
     }
+}
+
+
+
+
+class House{
+    private $huongnha;
+    private $thaitue;
+
+
 }

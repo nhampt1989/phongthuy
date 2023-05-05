@@ -1,0 +1,80 @@
+.cungdiaban{
+    width: 270px;
+    height: 250px;
+    display: flex;
+    flex-flow: column;
+}
+
+.cungmenhcungthan{
+     width: 270px; 
+    height: 18px;
+    display: flex;
+    /* text-align: end; */
+}
+.cungmenh{
+    width: 135px;
+    height: 18px;
+}
+
+.chinhtinh{
+    width: 270px;
+    height: 36px;
+    display: grid;
+    text-align: center;
+    
+}
+
+.ancungthan{
+    width: 135px;
+    height: 18px;
+    color: red;
+    text-align: right;
+}
+.cacsaophu{
+    width: 270px;
+     height: 178px; 
+    display: flex;      
+}
+.saotot{
+    width: 135px;
+    height: 150px;
+    display: grid;
+    color: red;
+    text-align: center;
+
+}
+.saoxau{
+    width: 135px;
+    height: 150px;
+    display: grid;
+    color: black;
+    text-align: left;
+
+}
+.saotuantriet{
+    width: 270px;
+    height: 18px;
+    display: flex;
+    text-align: center;
+    color: chocolate;
+    
+}
+.dongcuoicung{
+    width: 270px;
+    height: 18px;
+    display: flex; 
+    
+}
+.daihan{
+    width: 90px;
+    
+}
+.vongtruongsinh{
+    width: 90px;
+    text-align: center;
+    
+}
+.tieuhan{
+    width: 90px;
+    text-align: right;
+}
